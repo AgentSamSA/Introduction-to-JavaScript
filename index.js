@@ -283,10 +283,17 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(string) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  let vowelCount = 0;
+  for (let i = 0; i < string.length; i++) {
+    if (vowels.includes(string.substring(i, i + 1).toLowerCase())) {
+      vowelCount++;
+    }
+  }
+  return vowelCount;
 }
-
+console.log(vowelCounter("aaa"));
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
