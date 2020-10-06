@@ -54,8 +54,7 @@ Do the following:
    HINT: look up the Number method
 */
 let stringInt = "1999";
-Number(stringInt);
-console.log(stringInt);
+console.log(Number(stringInt));
 
 /*
 Task 1d - Multiply
@@ -152,43 +151,39 @@ Use the game function below to do the following:
   
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
+var compChoice = Math.random();
+if (compChoice < .34) {
+  compChoice = "rock";
+} else if (compChoice < .67) {
+  compChoice = "paper";
+} else {
+  compChoice = "scissors";
+}
 
-function game(choice) {
-  let compChoice = Math.random();
-
-  if (compChoice <= .34) {
-    compChoice = "rock";
-  } else if (compChoice <= .67) {
-    compChoice = "paper";
-  } else {
-    compChoice = "scissors";
+function game(choice, compChoice) {
+  if (choice === compChoice) {
+    return "it's a tie";
   }
 
   if (choice === "rock") {
-    if (compChoice === "rock") {
-      return "it's a tie";
-    } else if (compChoice === "paper") {
+    if (compChoice === "paper") {
       return "you lose!";
-    } else if (compChoice === "scissors") {
+    } else {
       return "you win!";
     }
   }
   if (choice === "paper") {
-    if (compChoice = "rock") {
+    if (compChoice === "rock") {
       return "you win!";
-    } else if (compChoice === "paper") {
-      return "it's a tie";
-    } else if (compChoice === "scissors") {
+    } else {
       return "you lose!";
     }
   }
   if (choice === "scissors") {
     if (compChoice === "rock") {
       return "you lose!";
-    } else if (compChoice === "paper") {
+    } else {
       return "you win!";
-    } else if (compChoice === "scissors") {
-      return "it's a tie";
     }
   }
 }
@@ -205,8 +200,8 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/) {
-  /*add your code here*/
+function miles(km) {
+  return km * .621371;
 }
 
 
@@ -219,8 +214,8 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/) {
-  /*add your code here*/
+function feet(cm) {
+  return cm / 30.48;
 }
 
 
@@ -235,8 +230,10 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/) {
-  /*add your code here*/
+function annoyingSong(startNum) {
+  for (let i = startNum; i > 0; i--) {
+    return `${startNum} bottles of soda on the wall, ${startNum} bottles of soda, take one down pass it around ${startNum - 1} bottles of soda on the wall`;
+  }
 }
 
 
@@ -255,8 +252,18 @@ Using the grade function below do the following:
    below 60 = F
 */
 
-function grade(/*add your code here*/) {
-  /*add your code here*/
+function grade(numberGrade) {
+  if (numberGrade < 60) {
+    return "you got an F";
+  } else if (numberGrade < 70) {
+    return "you got a D";
+  } else if (numberGrade < 80) {
+    return "you got a C";
+  } else if (numberGrade < 90) {
+    return "you got a B";
+  } else {
+    return "you got an A";
+  }
 }
 
 
